@@ -1,0 +1,1392 @@
+{
+  "flashicon": "icons/IR_Transmitter.swf",
+  "imgIconBody": "",
+  "imgIconDimmable": "",
+  "imgIconTurnable": "",
+  "imgIconMin": "",
+  "imgIconMax": "",
+  "halloIconsDir": "pics/hallo",
+  "inScene": "1",
+  "DisplayStatus": {
+  },
+  "doc_url": {
+    "doc_language": 1,
+    "doc_manual": 1,
+    "doc_version": 1,
+    "doc_platform": 0,
+    "doc_page": "devices"
+  },
+  "Tabs": [
+    {
+      "Label": {
+        "lang_tag": "tabname_control",
+        "text": "Settings"
+      },
+      "Position": "0",
+      "TabType": "flash",
+      "SceneGroup": [
+        {
+          "id": "1",
+          "top": "0.5",
+          "left": "0",
+          "x": "2",
+          "y": "2.5"
+        }
+      ],
+      "ControlGroup": [
+        {
+          "id": "1",
+          "isSingle": "1",
+          "scenegroup": "1"
+        },
+        {
+          "id": "2",
+          "isSingle": "1",
+          "scenegroup": "1"
+        },
+        {
+          "id": "3",
+          "isSingle": "1",
+          "scenegroup": "1"
+        }
+      ],
+      "Control": [
+        {
+          "ControlGroup": "1",
+          "ControlType": "button",
+          "top": "1.5",
+          "left": "0",
+          "Label": {
+            "lang_tag": "cmd_off",
+            "text": "Off"
+          },
+          "Display": {
+            "Service": "urn:upnp-org:serviceId:SwitchPower1",
+            "Variable": "Status",
+            "Value": "0",
+            "Top": 25,
+            "Left": 50,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:upnp-org:serviceId:SwitchPower1",
+            "Action": "SetTarget",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "0"
+              }
+            ]
+          }
+        },
+        {
+          "ControlGroup": "1",
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "On"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:upnp-org:serviceId:SwitchPower1",
+            "Variable": "Status",
+            "Value": "1",
+            "Top": 25,
+            "Left": 145,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:upnp-org:serviceId:SwitchPower1",
+            "Action": "SetTarget",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "1"
+              }
+            ]
+          }
+        },
+        {
+          "ControlType": "label",
+          "Label": {
+            "lang_tag": "device_settings_page",
+            "text": "Volume"
+          },
+          "Display": {
+            "Top": 70,
+            "Left": 50,
+            "Width": 120,
+            "Height": 20
+          }
+        },
+        {
+          "ControlGroup": "3",
+          "ControlHeader": "1",
+          "ControlType": "slider",
+          "top": "0",
+          "left": "0",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "Volume",
+            "ID": "Volume",
+            "MinValue": "0",
+            "MaxValue": "50",
+            "Top": 65,
+            "Left": 145,
+            "Width": 200,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetVolumeTarget",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "ID": "Volume"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "label",
+          "Label": {
+            "lang_tag": "device_settings_page",
+            "text": "Centre Vol"
+          },
+          "Display": {
+            "Top": 95,
+            "Left": 50,
+            "Width": 120,
+            "Height": 20
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "-12"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "CentreVolume",
+            "Value": "-12",
+            "Top": 90,
+            "Left": 145,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetCentreVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "-12"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "-9"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "CentreVolume",
+            "Value": "-9",
+            "Top": 90,
+            "Left": 175,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetCentreVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "-9"
+              }
+            ]
+          }
+        },
+{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "-6"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "CentreVolume",
+            "Value": "-6",
+            "Top": 90,
+            "Left": 205,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetCentreVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "-6"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "-3"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "CentreVolume",
+            "Value": "-3",
+            "Top": 90,
+            "Left": 235,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetCentreVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "-3"
+              }
+            ]
+          }
+        },
+
+{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "0"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "CentreVolume",
+            "Value": "00",
+            "Top": 90,
+            "Left": 265,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetCentreVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "00"
+              }
+            ]
+          }
+        },
+{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "+3"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "CentreVolume",
+            "Value": "+3",
+            "Top": 90,
+            "Left": 295,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetCentreVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "+3"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "+6"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "CentreVolume",
+            "Value": "+6",
+            "Top": 90,
+            "Left": 325,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetCentreVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "+6"
+              }
+            ]
+          }
+        },
+{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "+9"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "CentreVolume",
+            "Value": "+9",
+            "Top": 90,
+            "Left": 355,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetCentreVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "+9"
+              }
+            ]
+          }
+        },
+{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "+12"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "CentreVolume",
+            "Value": "+12",
+            "Top": 90,
+            "Left": 385,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetCentreVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "+12"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "label",
+          "Label": {
+            "lang_tag": "device_settings_page",
+            "text": "Subwoofer Vol"
+          },
+          "Display": {
+            "Top": 120,
+            "Left": 50,
+            "Width": 120,
+            "Height": 20
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "-12"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "SubwooferVolume",
+            "Value": "-12",
+            "Top": 115,
+            "Left": 145,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetSubwooferVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "-12"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "-9"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "SubwooferVolume",
+            "Value": "-9",
+            "Top": 115,
+            "Left": 175,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetSubwooferVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "-9"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "-6"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "SubwooferVolume",
+            "Value": "-6",
+            "Top": 115,
+            "Left": 205,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetSubwooferVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "-6"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "-3"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "SubwooferVolume",
+            "Value": "-3",
+            "Top": 115,
+            "Left": 235,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetSubwooferVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "-3"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "0"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "SubwooferVolume",
+            "Value": "0",
+            "Top": 115,
+            "Left": 265,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetSubwooferVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "0"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "+3"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "SubwooferVolume",
+            "Value": "+3",
+            "Top": 115,
+            "Left": 295,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetSubwooferVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "+3"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "+6"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "SubwooferVolume",
+            "Value": "+6",
+            "Top": 115,
+            "Left": 325,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetSubwooferVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "+6"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "+9"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "SubwooferVolume",
+            "Value": "+9",
+            "Top": 115,
+            "Left": 355,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetSubwooferVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "+9"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "+12"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "SubwooferVolume",
+            "Value": "+12",
+            "Top": 115,
+            "Left": 385,
+            "Width": 25,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetSubwooferVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "+12"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "label",
+          "Label": {
+            "lang_tag": "device_settings_page",
+            "text": "Input"
+          },
+          "Display": {
+            "Top": 145,
+            "Left": 50,
+            "Width": 120,
+            "Height": 20
+          }
+        },
+        {
+          "ControlType": "variable",
+          "Display": {
+            "Service": "urn:micasaverde-com:serviceId:InputSelection1",
+            "Variable": "Input",
+            "Top": 145,
+            "Left": 140,
+            "Width": 200,
+            "Height": 20
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Toggle"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:micasaverde-com:serviceId:InputSelection1",
+            "Variable": "Input",
+            "Top": 140,
+            "Left": 225,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:micasaverde-com:serviceId:InputSelection1",
+            "Action": "ToggleInput"
+           }
+        },
+
+	{
+          "ControlType": "label",
+          "Label": {
+            "lang_tag": "device_settings_page",
+            "text": "ListeningMode"
+          },
+          "Display": {
+            "Top": 170,
+            "Left": 50,
+            "Width": 120,
+            "Height": 20
+          }
+        },
+        {
+          "ControlType": "variable",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "ListeningMode",
+            "Top": 165,
+            "Left": 140,
+            "Width": 75,
+            "Height": 20
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Toggle"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "ListeningMode",
+            "Top": 165,
+            "Left": 225,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetListeningMode",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "UP"
+              }
+            ]
+           }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Music"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "ListeningMode",
+            "Top": 165,
+            "Left": 305,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetListeningMode",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "MUSIC"
+              }
+            ]
+           }
+        },
+
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Movie"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "ListeningMode",
+            "Top": 165,
+            "Left": 385,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetListeningMode",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "MOVIE"
+              }
+            ]
+           }
+        },
+
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Game"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "ListeningMode",
+            "Top": 165,
+            "Left": 465,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetListeningMode",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "GAME"
+              }
+            ]
+           }
+        },
+
+
+	{
+          "ControlType": "label",
+          "Label": {
+            "lang_tag": "device_settings_page",
+            "text": "Audyssey"
+          },
+          "Display": {
+            "Top": 195,
+            "Left": 50,
+            "Width": 120,
+            "Height": 20
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Off"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "Audyssey",
+            "Value": "00",
+            "Top": 190,
+            "Left": 145,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetAudyssey",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "00"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Movie"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "Audyssey",
+            "Value": "01",
+            "Top": 190,
+            "Left": 225,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetAudyssey",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "01"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Music"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "Audyssey",
+            "Value": "02",
+            "Top": 190,
+            "Left": 305,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetAudyssey",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "02"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "label",
+          "Label": {
+            "lang_tag": "device_settings_page",
+            "text": "Audyssey D. EQ"
+          },
+          "Display": {
+            "Top": 220,
+            "Left": 50,
+            "Width": 120,
+            "Height": 20
+          }
+        },
+        {
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Off"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "AudysseyDynamicEq",
+            "Value": "00",
+            "Top": 215,
+            "Left": 145,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetAudysseyDynamicEq",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "00"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "On"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "AudysseyDynamicEq",
+            "Value": "01",
+            "Top": 215,
+            "Left": 225,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetAudysseyDynamicEq",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "01"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "label",
+          "Label": {
+            "lang_tag": "device_settings_page",
+            "text": "Audyssey D. Vol"
+          },
+          "Display": {
+            "Top": 245,
+            "Left": 50,
+            "Width": 120,
+            "Height": 20
+          }
+        },
+        {
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Off"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "AudysseyDynamicVolume",
+            "Value": "00",
+            "Top": 240,
+            "Left": 145,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetAudysseyDynamicVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "00"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Light"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "AudysseyDynamicVolume",
+            "Value": "01",
+            "Top": 240,
+            "Left": 225,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetAudysseyDynamicVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "01"
+              }
+            ]
+          }
+        },
+
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Medium"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "AudysseyDynamicVolume",
+            "Value": "02",
+            "Top": 240,
+            "Left": 305,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetAudysseyDynamicVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "02"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "High"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "AudysseyDynamicVolume",
+            "Value": "03",
+            "Top": 240,
+            "Left": 385,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetAudysseyDynamicVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "03"
+              }
+            ]
+          }
+        },
+
+	{
+          "ControlType": "label",
+          "Label": {
+            "lang_tag": "device_settings_page",
+            "text": "Dolby Volume"
+          },
+          "Display": {
+            "Top": 270,
+            "Left": 50,
+            "Width": 120,
+            "Height": 20
+          }
+        },
+        {
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Off"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "DolbyVolume",
+            "Value": "00",
+            "Top": 265,
+            "Left": 145,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetDolbyVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "00"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "On/Low"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "DolbyVolume",
+            "Value": "01",
+            "Top": 265,
+            "Left": 225,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetDolbyVolume",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "01"
+              }
+            ]
+          }
+        },
+		{
+          "ControlType": "label",
+          "Label": {
+            "lang_tag": "device_settings_page",
+            "text": "Late Night Mode"
+          },
+          "Display": {
+            "Top": 295,
+            "Left": 50,
+            "Width": 120,
+            "Height": 20
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Off"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "LateNightMode",
+            "Value": "00",
+            "Top": 290,
+            "Left": 145,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetLateNightMode",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "00"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "On"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "LateNightMode",
+            "Value": "01",
+            "Top": 290,
+            "Left": 225,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetLateNightMode",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "01"
+              }
+            ]
+          }
+        },		
+	{
+          "ControlType": "label",
+          "Label": {
+            "lang_tag": "device_settings_page",
+            "text": "Re EQ"
+          },
+          "Display": {
+            "Top": 320,
+            "Left": 50,
+            "Width": 120,
+            "Height": 20
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "Off"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "ReEq",
+            "Value": "00",
+            "Top": 315,
+            "Left": 145,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetReEq",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "00"
+              }
+            ]
+          }
+        },
+	{
+          "ControlType": "button",
+          "Label": {
+            "lang_tag": "cmd_on",
+            "text": "On"
+          },
+          "top": "1.5",
+          "left": "1",
+          "Display": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Variable": "ReEq",
+            "Value": "01",
+            "Top": 315,
+            "Left": 225,
+            "Width": 75,
+            "Height": 20
+          },
+          "Command": {
+            "Service": "urn:onkyo-com:serviceId:Receiver1",
+            "Action": "SetReEq",
+            "Parameters": [
+              {
+                "Name": "newTargetValue",
+                "Value": "01"
+              }
+            ]
+          }
+        }			
+      ]
+    },
+    {
+      "Label": {
+        "lang_tag": "settings",
+        "text": "Settings"
+      },
+      "Position": "1",
+      "TabType": "javascript",
+      "ScriptName": "shared.js",
+      "Function": "simple_device"
+    },
+    {
+      "Label": {
+        "lang_tag": "advanced",
+        "text": "Advanced"
+      },
+      "Position": "2",
+      "TabType": "javascript",
+      "ScriptName": "shared.js",
+      "Function": "advanced_device"
+    }
+  ],
+  "DeviceType": "urn:schemas-onkyo-com:device:receiver:1",
+  "device_type": "urn:schemas-onkyo-com:device:receiver:1"
+}
+

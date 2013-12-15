@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+<implementation>
+    <settings>
+        <protocol>raw</protocol>
+    </settings>
+
+    <functions>
+	local onkyoLib
+
+	function receiverStartup(lul_device) 		
+		if (package.path:find ("/etc/cmh-ludl/?.lua;/etc/cmh-lu/?.lua", 1, true) == nil) then
+	        	package.path = package.path .. ";/etc/cmh-ludl/?.lua;/etc/cmh-lu/?.lua"
+	    	end
+        	package.loaded.L_OnkyoLib1 = nil
+        	onkyoLib = require("L_OnkyoReceiver1")
+
+		onkyoLib.receiverStartup(lul_device)
+	end
+    </functions>
+
+    <incoming>
+        <lua>
+	    	onkyoLib.receiveIncomingData(lul_device, tostring(lul_data))
+        </lua>
+    </incoming>
+
+    <startup>receiverStartup</startup>
+
+    <actionList>
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>DiscreteinputCable</name>
+            <run>
+                -- Main picture Input Select - Cable/Sat
+                onkyoLib.inputSelect(lul_device, "01")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>DiscreteinputCD1</name>
+            <run>
+                -- Main picture Input Select - CD
+                onkyoLib.inputSelect(lul_device, "23")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>DiscreteinputDVD</name>
+            <run>
+                -- Main picture Input Select - DVD
+                onkyoLib.inputSelect(lul_device, "10")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>DiscreteinputMD</name>
+            <run>
+                -- Main picture Input Select - TAPE(1)  TV/TAPE
+                onkyoLib.inputSelect(lul_device, "QSTN")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>DiscreteinputPVR</name>
+            <run>
+                -- Main picture Input Select - TAPE(1) TV/TAPE
+                onkyoLib.inputSelect(lul_device, "20")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>Input1</name>
+            <run>
+                -- Main picture Input Select - VIDEO1 VCR/DVR
+                onkyoLib.inputSelect(lul_device, "00")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+                <name>Input2</name>
+            <run>
+                -- Main picture Input Select - VIDEO2 CBL/SAT
+                onkyoLib.inputSelect(lul_device, "01")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>Input3</name>
+            <run>
+                -- Main picture Input Select - VIDEO3 GAME/TV GAME
+                onkyoLib.inputSelect(lul_device, "02")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>Input4</name>
+            <run>
+                -- Main picture Input Select - VIDEO4 AUX1(AUX)
+                onkyoLib.inputSelect(lul_device, "03")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>Input5</name>
+            <run>
+                -- Main picture Input Select - VIDEO5 AUX2
+                onkyoLib.inputSelect(lul_device, "04")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>Input6</name>
+            <run>
+                -- Main picture Input Select - VIDEO6
+                onkyoLib.inputSelect(lul_device, "05")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>Input7</name>
+            <run>
+                -- Main picture Input Select - VIDEO7
+                onkyoLib.inputSelect(lul_device, "06")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>Input8</name>
+            <run>
+                -- Main picture Input Select - MUSIC SERVER
+                onkyoLib.inputSelect(lul_device, "27")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>Input9</name>
+            <run>
+                -- Main picture Input Select - INTERNET RADIO
+                onkyoLib.inputSelect(lul_device, "28")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>Input10</name>
+            <run>
+                -- Main picture Input Select - UNIVERSAL PORT
+                onkyoLib.inputSelect(lul_device, "40")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:InputSelection1</serviceId>
+            <name>ToggleInput</name>
+            <run>
+                -- Next Source
+                onkyoLib.inputSelect(lul_device, "UP")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:upnp-org:serviceId:SwitchPower1</serviceId>
+            <name>SetTarget</name>
+            <run>
+		onkyoLib.setPower(lul_device, lul_settings.newTargetValue)
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:upnp-org:serviceId:SwitchPower1</serviceId>
+            <name>GetTarget</name>
+            <run>
+                onkyoLib.getPowerStatus(lul_device)
+                local target = luup.variable_get("urn:upnp-org:serviceId:SwitchPower1", "Target", lul_device)
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:onkyo-com:serviceId:Receiver1</serviceId>
+            <name>SetVolumeTarget</name>
+            <run>
+		onkyoLib.setVolume(lul_device, lul_settings.newTargetValue)                
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:onkyo-com:serviceId:Receiver1</serviceId>
+            <name>SetInputTarget</name>
+            <run>
+		-- Set input to target value
+		onkyoLib.inputSelect(lul_device, lul_settings.newTargetValue)
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:DiscretePower1</serviceId>
+            <name>Off</name>
+            <run>
+		onkyoLib.setPower(lul_device, "0")                
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:DiscretePower1</serviceId>
+            <name>On</name>
+            <run>
+		onkyoLib.setPower(lul_device, "1")                 
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:MenuNavigation1</serviceId>
+            <name>Back</name>
+            <run>
+                -- Not implemented
+                -- sendCommand("")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:MenuNavigation1</serviceId>
+            <name>Down</name>
+            <run>
+                -- Cursor Down
+                onkyoLib.sendCommand("OSDDOWN")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:MenuNavigation1</serviceId>
+            <name>Exit</name>
+            <run>
+                -- Exit OSD
+                onkyoLib.sendCommand("OSDEXIT")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:MenuNavigation1</serviceId>
+            <name>Left</name>
+            <run>
+                -- Cursor Left
+                onkyoLib.sendCommand("OSDLEFT")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:MenuNavigation1</serviceId>
+            <name>Menu</name>
+            <run>
+                -- Menu
+                onkyoLib.sendCommand("OSDMENU")
+            </run>
+
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:MenuNavigation1</serviceId>
+            <name>Right</name>
+            <run>
+                -- Cursor Right
+                onkyoLib.sendCommand("OSDRIGHT")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:MenuNavigation1</serviceId>
+            <name>Select</name>
+            <run>
+                -- Enter
+                onkyoLib.sendCommand("OSDENTER")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:MenuNavigation1</serviceId>
+            <name>Up</name>
+            <run>
+                -- Cursor UP
+                onkyoLib.sendCommand("OSDUP")
+            </run>
+       </action>
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:Volume1</serviceId>
+            <name>Down</name>
+            <run>
+                -- Volume down
+		onkyoLib.setVolume(lul_device, "Down")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:Volume1</serviceId>
+            <name>Mute</name>
+            <run>
+                -- Toggle Mute
+		onkyoLib.setVolume(lul_device, "Mute")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:Volume1</serviceId>
+            <name>Up</name>
+            <run>
+                -- Volume up
+		onkyoLib.setVolume(lul_device, "Up")
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:onkyo-com:serviceId:Receiver1</serviceId>
+            <name>SetCentreVolume</name>
+            <run>
+		-- Set Centre Volume Target (Value, UP or DOWN)
+		onkyoLib.sendCommand(string.format("CTL%s", lul_settings.newTargetValue))
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:onkyo-com:serviceId:Receiver1</serviceId>
+            <name>SetSubwooferVolume</name>
+            <run>
+		-- Set Subwoofer Volume Target (Value, UP or DOWN)
+		onkyoLib.sendCommand(string.format("SWL%s", lul_settings.newTargetValue))
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:onkyo-com:serviceId:Receiver1</serviceId>
+            <name>SetListeningMode</name>
+            <run>
+		-- Set Listening Mode Target (Value, UP, DOWN, MUSIC, GAME, MOVIE)
+		onkyoLib.sendCommand(string.format("LMD%s", lul_settings.newTargetValue))
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:onkyo-com:serviceId:Receiver1</serviceId>
+            <name>SetAudyssey</name>
+            <run>
+		-- Set Audyssey Target (00=Off, 01=Movie, 02=Music)
+		onkyoLib.sendCommand(string.format("ADY%s", lul_settings.newTargetValue))
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:onkyo-com:serviceId:Receiver1</serviceId>
+            <name>SetAudysseyDynamicEq</name>
+            <run>
+		-- Set Audyssey Dynamic EQ Target (00=Off, 01=On)
+		onkyoLib.sendCommand(string.format("ADQ%s", lul_settings.newTargetValue))
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:onkyo-com:serviceId:Receiver1</serviceId>
+            <name>SetAudysseyDynamicVolume</name>
+            <run>
+		-- Set Audyssey Dynamic Volume Target (00=Off, 01=Light, 02=Medium, 03=Heavy)
+		onkyoLib.sendCommand(string.format("ADV%s", lul_settings.newTargetValue))
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:onkyo-com:serviceId:Receiver1</serviceId>
+            <name>SetDolbyVolume</name>
+            <run>
+		-- Set Dolby Volume Target (00=Off, 01=Low, 02=Mid, 03=High)
+		onkyoLib.sendCommand(string.format("DVL%s", lul_settings.newTargetValue))
+            </run>
+        </action>
+
+        <action>
+            <serviceId>urn:onkyo-com:serviceId:Receiver1</serviceId>
+            <name>SetReEq</name>
+            <run>
+		-- Set ReEQ Target (00=Off, 01=Oh)
+		onkyoLib.sendCommand(string.format("RAS%s", lul_settings.newTargetValue))
+            </run>
+        </action>
+
+	<action>
+            <serviceId>urn:onkyo-com:serviceId:Receiver1</serviceId>
+            <name>SetLateNightMode</name>
+            <run>
+		-- Set LTN Target (00=Off, 01=Oh)
+		onkyoLib.sendCommand(string.format("LTN%s", lul_settings.newTargetValue))
+            </run>
+        </action>
+        
+        <action>
+            <serviceId>urn:micasaverde-com:serviceId:Misc1</serviceId>
+            <name>EQ</name>
+            <run>
+			-- Map EQ to Night Mode Toggle
+				onkyoLib.sendCommand("LTNUP")
+            </run>
+        </action>
+
+    </actionList>
+</implementation>
